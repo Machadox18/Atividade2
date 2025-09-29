@@ -21,24 +21,19 @@ public class NavegadorSimples extends JFrame {
     public NavegadorSimples() {
         super("Navegador Simples");
 
-        // Campo de texto para digitar a URL
         enderecoTxt = new JTextField("https://stackoverflow.com", 30);
 
-        // Botões
         btnAbrir = new JButton("Abrir");
         btnFechar = new JButton("Fechar");
 
-        // Editor de página
         editorPagina = new JEditorPane();
-        editorPagina.setEditable(false); // não permite editar
+        editorPagina.setEditable(false);
         JScrollPane scroll = new JScrollPane(editorPagina);
 
-        
         JPanel painelSuperior = new JPanel();
         painelSuperior.add(enderecoTxt);
         painelSuperior.add(btnAbrir);
         painelSuperior.add(btnFechar);
-
 
         btnAbrir.addActionListener(new ActionListener() {
             @Override
@@ -55,10 +50,8 @@ public class NavegadorSimples extends JFrame {
 
         btnFechar.addActionListener(e -> System.exit(0));
 
-
         add(painelSuperior, BorderLayout.NORTH);
         add(scroll, BorderLayout.CENTER);
-
 
         setSize(600, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
